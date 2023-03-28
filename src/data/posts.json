@@ -102,7 +102,7 @@
         {
             "nombre":"Sobre Mi",
             "type":"about",
-            "img": "../../../images/si.jpg",
+            "img": "../../../images/foto_perfil.jpeg",
             "me": "Rafael Leal",
             "oficio": "Copywriter"
         },
