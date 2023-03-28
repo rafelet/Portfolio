@@ -245,7 +245,7 @@ body {
                 // Caluclate middle and distribute evenly
                 $labelSize: 34px;
                 $labelSpacing: $menuSpacing;
-                $totalHeight: ($labelSize * $planetCount) + ($labelSpacing * ($planetCount)) / 2;
+                $totalHeight: calc(($labelSize * $planetCount) + ($labelSpacing * ($planetCount)) / 2);
 
                 top: calc(50vh + 100px + ((#{$labelSpacing} + #{$labelSize}) * #{$l}) + 0px - #{$totalHeight});   
             }
