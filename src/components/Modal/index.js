@@ -1,11 +1,11 @@
-import React, { useCallback, useState } from 'react';
+import * as React from 'react';
 import ImageViewer from 'react-simple-image-viewer';
 import "../../styles/modal.scss"
 
 const MakeImageModal = ({src}) => {
-    const [currentImage, setCurrentImage] = useState(0);
-    const [isViewerOpen, setIsViewerOpen] = useState(false);
-    const openImageViewer = useCallback((index) => {
+    const [currentImage, setCurrentImage] = React.useState(0);
+    const [isViewerOpen, setIsViewerOpen] = React.useState(false);
+    const openImageViewer = React.useCallback((index) => {
         setCurrentImage(index);
         setIsViewerOpen(true);
       }, []);
