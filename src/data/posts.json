@@ -133,7 +133,7 @@
         {
             "nombre":"Monster",
             "type":"proyecto",
-            "img": "../../../images/monster.jpg"
+            "img": "../../../images/monster_board_3.jpg"
         }
     ]
 }
