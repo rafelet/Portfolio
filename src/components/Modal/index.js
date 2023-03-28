@@ -47,7 +47,7 @@ const Modal = ({planets}) => {
                 {/* <MakeImageModal src={e.img}></MakeImageModal>
                      */}
                 <div className="basicscont">
-                    <div className="basicsleft"><img src="https://images.unsplash.com/photo-1484589065579-248aad0d8b13?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=459&q=80"/></div>
+                    <div className="basicsleft"><img src={e.img}/></div>
                     <div className="basicsright">
                         {/* <span className="plottraits">CONFIDENT</span> */}
                         <p>
