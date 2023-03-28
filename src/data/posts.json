@@ -1,0 +1,141 @@
+
+{
+    "TUTORIAL":{
+
+    },
+    "menu":[
+        {
+            "nombre":"Monster",
+            "mini":"../../../images/estrella_monster.png",
+            "img": "../../../images/Monster_Energy_logo.png",
+            "au":"50,33 AL",
+            "num":7
+        },
+        {
+            "nombre":"ACH",
+            "mini":"../../../images/estrella_hambre.png",
+            "img": "../../../images/accion_logo.png",
+            "au":"16,33 AL",
+            "num":6
+        },
+        {
+            "nombre":"Pikolin",
+            "mini":"../../../images/estrella_pikolin.png",
+            "img": "../../../images/pikolin_logo.png",
+            "au":"8,58 AL",
+            "num":5
+        },
+        {
+            "nombre":"Zalando",
+            "mini":"../../../images/estrella_zalando.png",
+            "img": "../../../images/zalando_logo.png",
+            "au":"7,78 AL",
+            "num":4
+        },
+        {
+            "nombre":"Burger King",
+            "mini":"../../../images/estrella_burger_king.png",
+            "img": "../../../images/burger_king_logo.png",
+            "au":"4,24 AL",
+            "num":3
+        },
+        {
+            "nombre":"DGT",
+            "mini":"../../../images/estrella_dgt.png",
+            "img": "../../../images/dgt_logo.png",
+            "au":"1 UA",
+            "num":2
+        },
+        {
+            "nombre":"Sobre Mi",
+            "mini":"https://www.solarsystemscope.com/spacepedia/images/handbook/renders/earth.png",
+            "au":"0.40 AU",
+            "num":1
+        }
+    ],
+    "preview":[
+        {
+            "nombre":"Sobre Mi",
+            "img": "https://img00.deviantart.net/04ef/i/2009/114/3/e/new_earth_texture_map_by_lightondesigns.jpg",
+            "description":"¿Sabías que las ideas provienen de las estrellas? Salen disparadas, viajan por todo el espacio y algunas caen aquí, justo en mi cabeza.",
+            "celestialObjectName":"Tierra"
+        },
+        {
+            "nombre":"DGT",
+            "img": "../../../images/sol_dgt.png",
+            "description":"¿Cómo podemos hacer que la seguridad mole?",
+            "celestialObjectName":"Sol"
+        },
+        {
+            "nombre":"Burger King",
+            "img": "../../../images/sol_burger_king.png",
+            "description":"Por su patrocinio de La Liga, Burger King quería una acción para los futboleros.",
+            "celestialObjectName":"Proxima Centauri"
+        },
+        {
+            "nombre":"Zalando",
+            "img": "../../../images/sol_zalando.jpg",
+            "description":"¿Cómo podemos mejorar la experiencia Zalando?",
+            "celestialObjectName":"Wolf 359"
+        },
+        {
+            "nombre":"Pikolin",
+            "img": "../../../images/sol_pikolin.png",
+            "description":"Haz algo que te quite el sueño: el ángulo que nos dio Pikolin. Querían algo centrado en las redes sociales.",
+            "celestialObjectName":"Sirius"
+        },
+        {
+            "nombre":"ACH",
+            "img": "../../../images/sol_hambre.png",
+            "description":"Acción Contra el Hambre es una ONG que lucha contra el hambre y la sed en el mundo.",
+            "celestialObjectName":"Gliese 682"
+        },
+        {
+            "nombre":"Monster",
+            "img": "../../../images/sol_monster.png",
+            "description":"Go big or go to hell.",
+            "celestialObjectName":"Earendel"
+        }
+        
+    ],
+    "details":[
+        {
+            "nombre":"Sobre Mi",
+            "type":"about",
+            "img": "../../../images/si.jpg",
+            "me": "Rafael Leal",
+            "oficio": "Copywriter"
+        },
+        {
+            "nombre":"DGT",
+            "type":"proyecto",
+            "img": "../../../images/DGT.jpg"
+        },
+        {
+            "nombre":"Burger King",
+            "type":"proyecto",
+            "img": "../../../images/BK.jpg"
+        },
+        {
+            "nombre":"Zalando",
+            "type":"proyecto",
+            "img": "../../../images/Zalando.jpg"
+        },{
+            "nombre":"Pikolin",
+            "type":"proyecto",
+            "video": "../../../video/Pikolin.mp4"
+        },
+        {
+            "nombre":"ACH",
+            "type":"proyecto",
+            "video": "../../../video/ACH.mp4"
+        },
+        {
+            "nombre":"Monster",
+            "type":"proyecto",
+            "img": "../../../images/monster.jpg"
+        }
+    ]
+}
+
+
