@@ -39,10 +39,10 @@ export const query = graphql`
   }
 `
 function isFirefox() {
-  let sUsrAg = navigator.userAgent;
+  let sUsrAg =  typeof window !== 'undefined' && navigator.userAgent.indexOf("Firefox") > -1;
   let isFirefox = false
 
-  if (sUsrAg.indexOf("Firefox") > -1) {
+  if (sUsrAg) {
       isFirefox = true;
   } 
 
