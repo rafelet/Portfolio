@@ -1,6 +1,6 @@
 import * as React from "react"
 
-const Planets = ({planets}) => {
+const Planets = ({planets, isFirefox}) => {
     return (
         <div className='solar'>
         {
@@ -13,9 +13,15 @@ const Planets = ({planets}) => {
                                     <h2>{e.celestialObjectName}</h2>
                                     <h1>{e.nombre}</h1>
                                     <p>{e.description}</p>
-                                    <label htmlFor={`read${e.nombre}`}>
-                                        <a> Ver Idea </a>
-                                    </label>
+                                    {
+                                        isFirefox
+                                            ?""
+                                            :<label htmlFor={`read${e.nombre}`}>
+                                                <a> Ver Idea </a>
+                                            </label>
+                                    }
+                                        
+                                    
                                 </div>
                                 <div className='overlay'></div>
                             </div>

@@ -1,0 +1,117 @@
+import * as React from 'react';
+import ImageViewer from 'react-simple-image-viewer';
+import "../../styles/modal.scss"
+
+const MakeImageModal = ({src}) => {
+    const [currentImage, setCurrentImage] = React.useState(0);
+    const [isViewerOpen, setIsViewerOpen] = React.useState(false);
+    const openImageViewer = React.useCallback((index) => {
+        setCurrentImage(index);
+        setIsViewerOpen(true);
+      }, []);
+    
+      const closeImageViewer = () => {
+        setCurrentImage(0);
+        setIsViewerOpen(false);
+      };
+    return ( 
+        <>
+        <img
+          src={ src }
+          onClick={ () => openImageViewer(0) }
+          className="img1"
+          alt=""
+        />
+    
+        {isViewerOpen && (
+            <ImageViewer
+                src={ [src] }
+                currentIndex={ currentImage }
+                disableScroll={ false }
+                closeOnClickOutside={ true }
+                onClose={ closeImageViewer }
+            />
+        )}
+        </>
+     );
+}
+ 
+const FirefoxModal = ({planets}) => {
+    
+    const makeResume = (e)=>{
+        return (
+            <div className='firefoxModalWrapper'>       
+                <h1>{e.nombre}</h1> 
+                <div className="basicscont">
+                    <div className="basicsleft"><img src={e.img}/></div>
+                    <div className="basicsright">
+                        {/* <span className="plottraits">CONFIDENT</span> */}
+                        <p>
+                           Pararrayos, atrapasueños, cogebalas, subemontañas, escribetodo, piensacosas, copywriter.
+
+                        </p>
+                    </div>
+                </div>
+                
+                
+                <div className="plotbasics">
+                    <div className="plotdivider">Trayectoria Profesional</div>
+                    <ul className="social-skills">
+                        <li><span className="bolder">2022</span> Prácticas Universitarias: JLC Creativos Asesores</li>
+                    </ul>
+                    <div className="plotdivider">Trayectoria Académica</div>
+                    <ul className="social-skills">
+                        <li><span className="bolder">2022-2023</span> Zink Project: Master en Copywriting</li>
+                        <li><span className="bolder">2018-2022</span> Universidad de Alicante: Grado en Publicidad y RRPP</li>
+                    </ul>
+                </div>
+            </div>
+        )
+    }
+    const makeProyect = (e)=>{
+        return (
+            <div className='firefoxModalWrapper'>    
+                <h1>{e.nombre}</h1> 
+                {
+                    e.img 
+                    ? <MakeImageModal src={e.img}></MakeImageModal>
+                    : <video width="80%" height="auto" controls>
+                        <source src={e.video} type="video/mp4"/>
+                        Your browser does not support the video tag.
+                    </video>
+                }
+                                    
+                {/* <div className="plotdivider">BASICS</div>
+                <div className="plotbasics">
+                    <p>
+                    A task board assassin with seemingly few morals, Alex is the perfect soldier. He never questions orders, no matter what he’s told to do, and work is always the main priority in his life.
+                
+                Or, at least, he’s trying to convince himself he is. He’s unhealthily obsessive about making sure everything is perfect, and takes it as a personal failure when anything goes wrong. He’s struggled with feeling good enough his all life, though his main critic has always been himself, and he hides his insecurities and crippling lack of self confidence behind a veneer of confidence and arrogance. He’s got so good at pretending that he almost believes it himself.
+                    </p>
+                
+                </div> */}
+            </div>
+        )
+        
+    }
+    return ( 
+         planets.map((e)=>{ 
+                return (
+                    <React.Fragment key={e.nombre}>
+                        <div id={`openModal${e.nombre}`} className="modal-window">
+                            <div className='firefoxModalWrapper'>
+                                <a href="#" title="Close" className="modal-close">Close</a>
+                                {
+                                    e.type ==="about"
+                                        ? makeResume(e)
+                                        : makeProyect(e)
+                                }
+                            </div>
+                        </div>
+                    </React.Fragment>
+                )        
+            })
+     );
+}
+
+export default FirefoxModal;

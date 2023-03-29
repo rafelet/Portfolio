@@ -1,6 +1,6 @@
 import * as React from "react"
 
-const MakeCustomTitleImageReveal = ({data}) => {
+const MakeCustomTitleImageReveal = ({data, isFirefox}) => {
     const ref = React.useRef(null);
     const imgRef = React.useRef(null);
     function move (e){
@@ -21,17 +21,29 @@ const MakeCustomTitleImageReveal = ({data}) => {
     return ( 
         <React.Fragment>
             <img ref={imgRef} src="" className="image-reveal"></img>
+            
             <div className='info'
                 ref={ref}
                 onMouseMove={(e)=>move(e)}
                 onMouseOver={(e)=>over(e)}
                 onMouseLeave={(e)=>leave(e)}
             >
-                <h2>
-                    <div className='pip'></div>
-                    {data.nombre}
-                </h2>
-                {/* <h3>{data.au}</h3> */}
+                {
+                    isFirefox
+                        ?<h2>
+                            <div className='pip'></div>
+                            {data.nombre}
+                            -
+                            <a  class="btn-Firefox" href={`#openModal${data.nombre}`}>
+                                Ver Idea
+                            </a>
+                        </h2>
+                        :<h2>
+                            <div className='pip'></div>
+                            {data.nombre}
+                        </h2>
+                }
+                
             </div>
             
         </React.Fragment>
@@ -66,7 +78,7 @@ const MakeCustomTitleImageReveal = ({data}) => {
  
 
 
-const ProyectMenu = ({planets}) => {
+const ProyectMenu = ({planets,isFirefox}) => {
     
 
     return (
@@ -77,7 +89,7 @@ const ProyectMenu = ({planets}) => {
                     <input defaultChecked className={`planet${e.num}`} id={`${e.nombre}`} name='planet' type='radio'/>
                     <label className={`menu ${e.nombre}`} htmlFor={`${e.nombre}`}>
                         <div className='preview' style={{background:`url('${e.mini}')`}}></div>
-                        <MakeCustomTitleImageReveal data={e}/>
+                        <MakeCustomTitleImageReveal data={e} isFirefox={isFirefox}/>
                         
                     </label>
                 </React.Fragment>

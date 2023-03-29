@@ -5,6 +5,7 @@ import Planets from "../components/Planets"
 import ProyectMenu from "../components/ProyectMenu"
 import { graphql } from "gatsby"
 import "../styles/planets.scss"
+import FirefoxModal from "../components/Modal/firefox.modal"
 
 export const query = graphql`
   query{
@@ -37,15 +38,30 @@ export const query = graphql`
     }
   }
 `
+function isFirefox() {
+  let sUsrAg = navigator.userAgent;
+  let isFirefox = false
+
+  if (sUsrAg.indexOf("Firefox") > -1) {
+      isFirefox = true;
+  } 
+
+  return isFirefox
+}
 const IndexPage = ({data}) => {
   const planets = data.allDataJson.edges[0].node
-  // console.log(planets);
+  const firefox = isFirefox()
+  console.log(firefox);
   return (
     
     <Layout>
-        <ProyectMenu planets={planets.menu}/>
-        <Planets planets={planets.preview}/>
-        <Modal planets={planets.details}/>
+        <ProyectMenu planets={planets.menu} isFirefox={firefox}/>
+        <Planets planets={planets.preview} isFirefox={firefox}/>
+        {
+          !firefox
+            ? <Modal planets={planets.details}/> 
+            : <FirefoxModal planets={planets.details}/> 
+        }
     </Layout>
   )
 }
